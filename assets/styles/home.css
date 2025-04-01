@@ -1,0 +1,166 @@
+/**
+ * Styling untuk halaman home 
+ */
+
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    flex-direction: column;
+    min-height: 100vh;
+    background-attachment: fixed;
+    padding: 10px; 
+    position: relative;
+    overflow-y: auto;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 280px;
+    margin: 10px auto 15px auto; 
+}
+
+/* Logo Styling */
+header img {
+    width: 100%;
+    max-width: 160px;
+    object-fit: contain;
+}
+
+/* Main Container */
+main {
+    width: 100%;
+    max-width: 800px;
+    padding: 24px; 
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.5s ease-in-out;
+    text-align: center;
+    position: relative;
+    top: -20px; 
+}
+
+/* Heading Styling */
+main h1 {
+    font-size: 26px; 
+    font-weight: 800; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+
+main h1::after {
+    content: "";
+    display: block;
+    width: 600px;
+    height: 4px;
+    background: #77b4f4;
+    margin: 8px auto;
+    border-radius: 2px;
+}
+
+/* Text Styling */
+main p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Centered Button */
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Button Styling */
+.btn-masuk {
+    display: inline-block;
+    padding: 12px 26px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #007BFF, #00D4FF);
+    border-radius: 50px;
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.btn-masuk:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 12px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Glow Effect */
+.btn-masuk::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    height: 250%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 80%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.btn-masuk:hover::before {
+    opacity: 1;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    main {
+        max-width: 90%;
+        padding: 20px;
+        top: -10px; /* Kurangi efek angkat */
+    }
+
+    main h1 {
+        font-size: 22px;
+    }
+
+    .btn-masuk {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

@@ -1,0 +1,358 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #1E3C72, #2A5298);
+    color: black;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+header {
+    background: linear-gradient(to right, #174A7C, #2A5298);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    animation: fadeIn 1s ease-in-out; 
+}
+
+h1, h2 {
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+/* Form Styles */
+form {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    margin-bottom: 25px;
+}
+
+form div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+label {
+    flex: 1;
+    text-align: left;
+    font-weight: 600;
+    color: white;
+}
+
+input, button {
+    flex: 6;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+}
+
+/* Checkbox Styles - FIXED */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    flex: 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.checkbox-wrapper label {
+    flex: 6;
+    cursor: pointer;
+}
+
+/* Book List */
+.book-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+.book-buttons button {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+}
+
+button {
+    background: #007BFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Book List */
+section {
+    margin-top: 25px;
+}
+
+#incompleteBookList, #completeBookList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+[data-testid="bookItem"] {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    transition: transform 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+[data-testid="bookItem"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-testid="bookItemTitle"] {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.btn-status {
+    background: #28a745;
+}
+
+.btn-delete {
+    background: #dc3545;
+}
+
+.btn-edit {
+    background: #17a2b8;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px);
+    transition: all 0.4s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    background: #2A5298;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: white;
+}
+
+.close-modal {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+.modal-body {
+    padding: 20px;
+    color: #333;
+}
+
+.modal-body p {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-save {
+    background: #28a745;
+}
+
+.btn-cancel {
+    background: #6c757d;
+}
+
+.btn-confirm-delete {
+    background: #dc3545;
+}
+
+.delete-confirm {
+    max-width: 400px;
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    background: #28a745;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.notification.error {
+    background: #dc3545;
+}
+
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.no-result {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-style: italic;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    main {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    form div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .checkbox-wrapper {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    }
+    
+    input, button {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .modal-content {
+        width: 95%;
+    }
+}
+
+/* Animasi Fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
